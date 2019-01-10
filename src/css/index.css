@@ -1,0 +1,657 @@
+@media screen and (max-width: 1000px) {
+  #connect p {
+    display:none;
+  }
+  #registerButton{
+    display:block !important;
+  }
+}
+/*GENERAL*/
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: "Indie Flower", arial;
+}
+.slide{
+  animation:slide;
+  animation-duration: 2s;
+}
+.sticky {
+  position: fixed;
+  z-index: 4000;
+}
+.stickySearch {
+  position: fixed;
+  top: 60px;
+  z-index: 4000;
+  background: white;
+  color: black;
+}
+.start{
+  position: absolute;
+  
+}
+@keyframes slide {
+  0% {opacity: 0; left:-1600px}
+  30% {opacity:0.5}
+  70% {opacity:0.8}
+  85% {left:0}
+  100% {opacity:1;}
+}
+.marginUp{
+  margin-top: 20px;
+}
+.errorMessage{
+
+}
+/*Upload Progress*/
+#uploadProgress{
+  position: absolute;
+  z-index: 4000;
+  background: rgba(24, 63, 159,0.9);
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: none;
+}
+#uploadProgress .row:nth-child(1){
+  height:30%;
+  text-transform: uppercase;
+}
+#uploadProgress .row:nth-child(2){
+  height:30%;
+}
+#uploadProgress h3{
+  font-size: 35px;
+}
+.display{
+  display:none;
+}
+/*CREER ET EDITER RECETTE*/
+#creationRecette{
+  background: black;
+  position: absolute;
+  z-index: 1000;
+  top: inherit !important;
+}
+#edit{
+  background: rgba(24, 63, 159,0.7);
+}
+.marked{
+  color: white;
+  background: rgba(168,0,0,0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+label{
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.form-group{
+  text-align: center;
+}
+/*DRAG-AND-DROP*/
+#newImage img, #editImage img{
+  max-width: 100%;
+}
+#file , #editFile{
+  display:none;
+}
+
+.ddrop{
+  width: 100%;
+  height: 300px;
+  background: rgba(168,0,0,0.5);
+  border-radius: 3px;
+  margin-top: 20px;
+  padding: 5px 30px;
+}
+.ddrop label{
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ddrop label:hover{
+  color: black;
+  background: white;
+}
+
+.ddrop .drop{
+  border: 3px dashed white;
+  height: 220px;
+}
+.ddrop .drop:hover{
+  background: rgba(0,0,0,0.8);
+  border: 3px solid rgb(168,0,0);
+}
+
+/* RECIPEDETAILS */
+
+#recipe{
+  position: absolute;
+  z-index: 1000;
+  padding: 0;
+}
+#recipePublic{
+  position: absolute;
+  z-index: 1000;
+  padding: 0;
+}
+#recipe .container-fluid{
+  padding: 0 ;
+}
+#recipeDetails {
+  text-align: center;
+  background: rgba(24, 63, 159,0.7);
+}
+#recipeDetails> div {
+  background: rgb(255,255,255);
+}
+#recipeDetails img{
+  max-width: 100%;
+  border-radius: 30px 10px;
+}
+#recipeDetails .recetteInfo>div:first-child h2{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+#recipeDetails button{
+  background: rgba(24, 63, 159,0.7);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+}
+#recipeDetails button:hover{
+  background: transparent;
+  border: 1px solid rgba(24, 63, 159,0.7);
+  color: rgba(24, 63, 159,0.7);
+}
+#recipeDetails .recetteInfo div {
+  color: white;
+  margin: 5px;
+  background: rgba(99, 11, 11, 0.93);
+}
+
+#recipeDetails .ingredient div:first-child{
+  background: rgba(24, 63, 159,0.7);
+  border-radius: 3px;
+}
+#recipeDetails .ingredient {
+  border-right: 3px solid rgba(24, 63, 159,0.7);
+}
+#recipeDetails .ingredient div:first-child h3{
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#recipeDetails .recette div:first-child{
+  background: rgba(24, 63, 159,0.7);
+  border-radius: 3px;
+}
+#recipeDetails .recette div:first-child h3{
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/*TOOLTIP ALL PREVIEW*/
+.toolLeft{
+  position: absolute;
+  top: -110%;
+  left:25%;
+  background: white;
+  border-radius: 50px;
+  width:100px;
+  font-weight: bold;
+  display: none;
+  height: 30px;
+  text-align: center;
+}
+.toolLeft p{
+  color: rgb(5, 20, 57);
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.toolLeft::before{
+  position: absolute;
+  top:60%;
+  left: 10px;
+  border-top: 0 solid transparent;
+  border-left: 6px solid white;
+  border-bottom: 25px solid transparent;
+  content: " ";
+}
+.toolRight{
+  position: absolute;
+  top: -110%;
+  right:25%;
+  background: white;
+  border-radius: 50px;
+  width:100px;
+  font-weight: bold;
+  display:none;
+  height: 30px;
+  text-align: center;
+}
+.toolRight p{
+  color: rgb(5, 20, 57);
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.toolRight::before{
+  position: absolute;
+  top:60%;
+  right: 10px;
+  border-top: 0 solid transparent;
+  border-right: 6px solid white;
+  border-bottom: 25px solid transparent;
+  content: " ";
+}
+.newToolUp{
+  bottom: 51%;
+}
+
+.plus{
+  position: absolute;
+  bottom: 20%;
+  right:1%;
+}
+.addOk{
+  position: absolute;
+  bottom: 20%;
+  right:1%;
+}
+.eye{
+  position: absolute;
+  bottom: 20%;
+  left:1%;
+}
+.eyeNew{
+  position: absolute;
+  bottom: 34%;
+  left:1%;
+}
+.eyeUser{
+  position: absolute;
+  bottom: 20%;
+  left:1%;
+}
+.star{
+  position: absolute;
+  top: 2%;
+  right:2%;
+  color: yellow;
+}
+/*CARD*/
+.card{
+  background:rgba(24, 63, 159,0.3);
+  border: 1px solid white;
+  margin: 1px;
+  height: 250px;
+  color: white;
+}
+.card-img-top{
+  height: 200px;
+  object-fit: cover;
+}
+.card-body{
+  padding: 5px;
+  text-align: center;
+}
+.card-body h5{
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+  height: 24px;
+}
+.preview{
+  padding: 2px;
+}
+.card:hover{
+  filter: opacity(90%);
+  border: 3px solid rgba(5, 20, 57, 0.8);
+  transform: scale(0.98);
+  color: rgb(5, 20, 57);
+  background: white;
+}
+
+#publicCard .card{
+  height:300px;
+}
+.publicCard{
+  display: none;
+}
+.card-footer{
+  padding: 5px;
+  text-align: right;
+  background: rgba(5, 20, 80, 0.8);
+}
+.btn-preview{
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(5, 20, 57, 0.6);
+  color: rgba(5, 20, 57, 0.8);
+  transition-timing-function: ease-in-out;
+}
+.btn-preview:hover{
+  background: rgba(5, 20, 57, 0.6);
+  color: white;
+}
+.edit{
+  position: absolute;
+  top: 2%;
+  left:2%;
+}
+.trash{
+  position: absolute;
+  bottom: 20%;
+  right:1%;
+}
+#deleteInfo{
+  position: absolute;
+  z-index: 450;
+  top: 40%;
+  margin-left: -150px;
+  left:50%;
+  background-color: rgba(5, 20, 57, 0.8);
+  width:300px;
+  text-align: center;
+  display: none;
+}
+#deleteInfo p{
+  color: white;
+  font-size: 30px;
+  margin: 30px;
+}
+#addInfo{
+  position: absolute;
+  z-index: 450;
+  top: 40%;
+  margin-left: -150px;
+  left:50%;
+  background-color: rgba(5, 20, 57, 0.8);
+  width:300px;
+  text-align: center;
+  display: none;
+}
+#addInfo p{
+  color: white;
+  font-size: 30px;
+  margin: 30px;
+}
+/*NAVMENU*/
+#navMenu{
+  position: fixed;
+  z-index: 4000;
+  height: 100%;
+  color: white;
+  text-align: center;
+  background:rgba(24, 63, 159,0.9);
+  padding: 0;
+}
+
+#navMenu ul li a{
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255,0.6);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 5% 0;
+}
+
+#navMenu a:hover{
+  border: 1px solid rgba(255, 255, 255,0.6);
+  background: rgba(24, 63, 159,0.9);
+  color:
+}
+.nav-link.active{
+  background: black !important;
+}
+#navMenu .nav{
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+#navMenu div:nth-child(1){
+  margin: 15% 0;
+}
+#navMenu div:nth-child(3){
+  margin-top: 20%;
+}
+#navMenu h3{
+  color: rgba(40, 120, 240,1);
+  text-transform: capitalize;
+}
+.navMenuLeft{
+  left:-100%;
+}
+/*ICON BAR MENU*/
+#homeIcon{
+  text-align: center;
+  font-size:28px;
+  color: rgba(255,255,255,0.8);
+  background:rgba(24, 63, 159,0.7);
+  cursor: pointer;
+}
+
+#searchIcon{
+  text-align: center;
+  font-size:28px;
+  color: rgba(255,255,255,0.8);
+  background:rgba(152, 23, 23, 0.8);
+  cursor: pointer;
+}
+
+#pencilIcon{
+  text-align: center;
+  font-size:28px;
+  color: rgba(255,255,255,0.8);
+  background:rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+#pencilIcon:hover{
+  transform: scale(1.20);
+  background: black;
+  left: 5px;
+}
+#searchIcon:hover{
+  transform: scale(1.20);
+  background: rgba(152, 23, 23, 1);
+  left: 5px;
+}
+#homeIcon:hover{
+ transform: scale(1.20);
+ background: rgba(24, 63, 159,1);
+ left: 5px;
+}
+
+/*SEARCH*/
+#searchInput{
+  background: transparent;
+  border: inherit;
+  border-bottom: 1px solid white;
+  border-radius: inherit;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+}
+#searchInput:focus{
+  background: rgba(24, 63, 159,0.7);
+}
+
+/*REGISTER ET CONNEXION*/
+#register{
+  position: absolute;
+  z-index: 1500;
+  height: 100%;
+  width:100%;
+}
+#connexion{
+  position: absolute;
+  z-index: 1500;
+  height: 100%;
+  width:100%;
+}
+#resetPassword{
+  position: absolute;
+  z-index: 1500;
+  height: 100%;
+  width:100%;
+}
+#connectResetPassword{
+  text-decoration: underline;
+  color: rgba(24, 63, 159,0.7);
+  margin: 0;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+  padding: 5px 0;
+}
+#connectResetPassword:hover{
+  color:rgba(168,0,0,0.5);
+  font-size: 16px;
+}
+.register{
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 40px;
+}
+.register label{
+  color: black;
+  letter-spacing: 2px;
+}
+.register input{
+  background: white;
+  border:inherit;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 20px;
+}
+.register :focus{
+  background: rgba(24, 63, 159,0.7);
+  color: white;
+}
+.register h3{
+  color: rgba(24, 63, 159,0.7);
+  letter-spacing: 2px;
+}
+.register button{
+  background: rgba(24, 63, 159,0.7);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+}
+.register button:hover{
+  background: transparent;
+  border: 1px solid rgba(24, 63, 159,0.7);
+  color: rgba(24, 63, 159,0.7);
+}
+.rightIcon{
+  position: absolute;
+  top:3%;
+  right:3%;
+  color: rgba(24, 63, 159,0.7);
+  font-size: 25px;
+  cursor: pointer;
+}
+#registerButton{
+  display: none;
+}
+/*BARRE DE CONNEXION */
+#connect{
+  background: white;
+}
+#connect p{
+  text-decoration: underline;
+  color: rgba(24, 63, 159,0.7);
+  margin: 0;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+#connect h1{
+  color: rgba(24, 63, 159,0.7);
+  margin: 0;
+}
+#connect button{
+  background: transparent;
+  border: 2px solid rgba(24, 63, 159,0.7);
+  border-radius:10px;
+  width:150px;
+  height: 40px;
+  margin: 0 5px;
+  color: rgba(24, 63, 159,0.7);
+  transition-duration: 1s;
+  cursor: pointer;
+}
+#connect button:hover{
+  background: rgba(24, 63, 159,0.7);
+  border: inherit;
+  color: white;
+}
+/*NAVBAR ADMIN*/
+#iconMenu{
+  text-align: center;
+  font-size: 28px;
+}
+#iconMenu>div>div:nth-child(1){
+  color: rgba(255,255,255,0.8);
+  background:rgba(24, 63, 159,0.7);
+  cursor: pointer;
+  padding: 10px;
+}
+#iconMenu>div>div:nth-child(2){
+  color: rgba(255,255,255,0.8);
+  background:rgba(152, 23, 23, 0.8);
+  cursor: pointer;
+  padding: 10px;
+}
+#iconMenu>div>div:nth-child(3){
+  color: rgba(255,255,255,0.8);
+  background:rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  padding: 10px;
+}
+#iconMenu>div>div:nth-child(4){
+  color: rgba(255,255,255,0.8);
+  background:rgba(39, 39, 77, 0.86);
+  cursor: pointer;
+  padding: 10px;
+}
+#iconMenu>div>div:hover{
+  position: relative;
+  right: 2%;
+  z-index: 420;
+  transform: scale(1.10);
+  background: white;
+  color: rgba(24, 63, 159,0.7);
+}
+#iconText{
+  width: 100%;
+  position: absolute;
+  z-index: 10000;
+  background: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 0;
+}
